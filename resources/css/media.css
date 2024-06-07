@@ -1,0 +1,15 @@
+@media screen and (prefers-color-scheme: light) {
+    .bg-grid {
+        background: url('../../public/images/png/light_grid.png'), white;
+        background-repeat: repeat;
+        color: black;
+    }
+}
+
+@media screen and (prefers-color-scheme: dark) {
+    .bg-grid {
+        background: url('../../public/images/png/dark_grid.png'), #171515;
+        background-repeat: repeat;
+        color: white;
+    }
+}
