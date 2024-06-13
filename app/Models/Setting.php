@@ -16,6 +16,7 @@ class Setting extends Model
         'value',
         'type',
         'attributes',
+        'page_name'
     ];
 
     protected $casts = [

@@ -1,3 +1,7 @@
-let fetchHandler = function () {}
+function darkFix() {
+    return document.querySelector('.dark iframe').contentDocument.style.background = 'red'
+}
 
-let EditorSettings = { laravelFilemanager: true, minHeight: '1200px'};
+(function () {
+    darkFix();
+})();

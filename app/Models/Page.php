@@ -28,14 +28,15 @@ class Page extends Model
         'slug',
         'title',
         'pathname',
-        'content',
+        'content_json',
+        'content_html',
         'template_name',
         'cover_image_url'
     ];
  
-    protected $guarded = ['id'];
+    //protected $guarded = ['id'];
  
-    public $translatable = ['title', 'description', 'content'];
+    public $translatable = ['title', 'description', 'content_json', 'content_html'];
 
     /**
      * The attributes that should be hidden for serialization.
@@ -45,12 +46,12 @@ class Page extends Model
     protected $hidden = [
     ];
     
-    public static function booted()
+    public function __construct(array $attributes = array())
     {
-        static::creating(function ($model) {
-            Metable::attachToFillable();
-        });
+        parent::__construct($attributes);
+        $this->initializeMetable();
     }
+
 
     /**
      * Get the attributes that should be cast.

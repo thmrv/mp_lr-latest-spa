@@ -6,16 +6,16 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use App\Traits\Meta\Metable;
+use Spatie\Translatable\HasTranslations;
 
 class Product extends Model
 {
     use SoftDeletes;
     use HasFactory;
     use Metable;
+    use HasTranslations;
 
-    protected $contentColumn = 'content';
-
-        /**
+    /**
      * The attributes that are mass assignable.
      *
      * @var array<int, string>
@@ -29,18 +29,18 @@ class Product extends Model
         'content',
         'template_name',
         'cover_image_url',
-        'custom_page_name'
+        'custom_page_name',
+        'page_name'
     ];
 
-    protected $guarded = ['id'];
- 
+    //protected $guarded = ['id'];
+
     public $translatable = ['title', 'description', 'content'];
 
-    public static function booted()
+    public function __construct(array $attributes = array())
     {
-        static::creating(function ($model) {
-            Metable::attachToFillable();
-        });
+        parent::__construct($attributes);
+        $this->initializeMetable();
     }
 
     /**
@@ -48,8 +48,7 @@ class Product extends Model
      *
      * @var array<int, string>
      */
-    protected $hidden = [
-    ];
+    protected $hidden = [];
 
     /**
      * Get the attributes that should be cast.
@@ -58,7 +57,6 @@ class Product extends Model
      */
     protected function casts(): array
     {
-        return [
-        ];
+        return [];
     }
 }

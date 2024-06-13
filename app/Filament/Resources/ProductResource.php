@@ -13,10 +13,13 @@ use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use SolutionForest\FilamentTranslateField\Forms\Component\Translate;
+use App\Traits\Meta\Metable;
 
 class ProductResource extends Resource
 {
     use SoftDeletes;
+    use Metable;
 
     protected static ?string $model = Product::class;
 
@@ -50,16 +53,6 @@ class ProductResource extends Resource
         $randomSalad = randomSalad();
 
         $schema = [
-            Forms\Components\TextInput::make('name')
-                ->maxLength(255)
-                ->default(null)
-                ->required()
-                ->default($randomSalad)
-                ->translateLabel(),
-            Forms\Components\TextInput::make('description')
-                ->maxLength(255)
-                ->default(null)
-                ->translateLabel(),
             Forms\Components\TextInput::make('slug')
                 ->maxLength(255)
                 ->default(null)
@@ -84,39 +77,24 @@ class ProductResource extends Resource
                 ->numeric()
                 ->default(0)
                 ->translateLabel(),
-            Forms\Components\TextInput::make('title')
-                ->maxLength(255)
-                ->default(null)
-                ->columnSpan(1)
-                ->translateLabel(),
-            Forms\Components\TextInput::make('template_name')
+            Forms\Components\TextInput::make('page_name')
                 ->prefix('resources/views/templates/')
                 ->suffix('.blade.php')
-                ->columnSpan(1)
-                ->required()
-                ->default('product')
-                ->translateLabel(),
+                ->columnSpan(1),
+            Translate::make()
+                ->columnSpanFull()
+                ->columns(2)
+                ->schema(
+                    array_merge(Metable::attachToPanel(), [
+                        Forms\Components\TextInput::make('title'),
+                        Forms\Components\Hidden::make('description'),
+                        Forms\Components\TextInput::make('name')->columnSpanFull(),
+                    ])
+                )->prefixLocaleLabel()
+                ->fieldTranslatableLabel(fn ($field, $locale) => __($field->getName(), locale: $locale))
+                ->statePath('data')
+                ->locales(['en', 'ru', 'zh', 'ko']),
         ];
-
-        if (getLocales() ?? ['en'])
-            foreach (getLocales() as $locale) {
-                if ($locale !== env('APP_LOCALE')) {
-                    array_push(
-                        $schema,
-                        Forms\Components\RichEditor::make('title_' . $locale)
-                            ->default(null)
-                            ->columnSpan('full')
-                            ->translateLabel(),
-                    );
-                    array_push(
-                        $schema,
-                        Forms\Components\RichEditor::make('description_' . $locale)
-                            ->default(null)
-                            ->columnSpan('full')
-                            ->translateLabel(),
-                    );
-                }
-            }
 
         return $form->schema($schema);
     }

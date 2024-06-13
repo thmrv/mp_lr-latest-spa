@@ -61,6 +61,7 @@
                 inputs.forEach((element, i) => {
                     this.$refs[(i+1)].focus();
                     this.$refs[(i+1)].value = paste[i] || '';
+                    this.handleInput(e, i)
                 });
             },
 

@@ -3,9 +3,9 @@
     <script src="{{ asset('/js/admin/editor.js') }}"></script>
     <form>
         {{ $this->form }}
-        <div class="dark:editor-dark">
+        <div class="blockeditor dark:editor-dark">
             @livewire('dropblockeditor', [
-            'title' => 'Editor'
+            'title' => __('general.page_editor')
             ])
         </div>
         <x-filament::button type="submit" class="mt-8 mb-8">

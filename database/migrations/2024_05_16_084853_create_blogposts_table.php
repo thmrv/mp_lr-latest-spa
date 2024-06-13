@@ -25,8 +25,8 @@ return new class extends Migration
             $table->string('title')->nullable();
             $table->string('pathname')->nullable();
             $table->longText('content')->nullable();
-            $table->string('template_name');
-            $table->string('cover_image_url');
+            $table->string('template_name')->default('blogpost');
+            $table->string('cover_image_url')->nullable();;
             $table->timestamps();
             $table->softDeletes();
         });

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ed205512843e0500a5346658c3f3e204",
+    "content-hash": "8995399f492fcc383f0f5173dbc5ed46",
     "packages": [
         {
             "name": "afsakar/filament-otp-login",
@@ -1894,76 +1894,6 @@
             "time": "2024-05-30T07:28:39+00:00"
         },
         {
-            "name": "glorand/laravel-model-settings",
-            "version": "7.0.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/glorand/laravel-model-settings.git",
-                "reference": "b7e5556dfd5afa8c4515593dbe1181ab4af89af9"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/glorand/laravel-model-settings/zipball/b7e5556dfd5afa8c4515593dbe1181ab4af89af9",
-                "reference": "b7e5556dfd5afa8c4515593dbe1181ab4af89af9",
-                "shasum": ""
-            },
-            "require": {
-                "ext-json": "*",
-                "illuminate/cache": "^10.0|^11.0",
-                "illuminate/config": "^10.0|^11.0",
-                "illuminate/console": "^10.0|^11.0",
-                "illuminate/database": "^10.0|^11.0",
-                "illuminate/filesystem": "^10.0|^11.0",
-                "illuminate/support": "^10.0|^11.0",
-                "php": "^8.1"
-            },
-            "require-dev": {
-                "friendsofphp/php-cs-fixer": "^3.14",
-                "josiasmontag/laravel-redis-mock": "^1.2",
-                "orchestra/testbench": "^8.0|^9.0",
-                "phpunit/phpunit": "^10.5|^11.0"
-            },
-            "suggest": {
-                "predis/predis": "Required to use settings with Redis"
-            },
-            "type": "laravel-package",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "Glorand\\Model\\Settings\\ModelSettingsServiceProvider"
-                    ]
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Glorand\\Model\\Settings\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Lorand Gombos",
-                    "email": "gombos.lorand@gmail.com"
-                }
-            ],
-            "description": "Model Settings for your Laravel app",
-            "keywords": [
-                "Settings",
-                "glorand",
-                "laravel",
-                "laravel-model-settings",
-                "laravel-settings"
-            ],
-            "support": {
-                "issues": "https://github.com/glorand/laravel-model-settings/issues",
-                "source": "https://github.com/glorand/laravel-model-settings/tree/7.0.0"
-            },
-            "time": "2024-03-13T10:38:22+00:00"
-        },
-        {
             "name": "graham-campbell/result-type",
             "version": "v1.1.2",
             "source": {
@@ -2728,6 +2658,77 @@
                 }
             ],
             "time": "2024-03-12T21:27:17+00:00"
+        },
+        {
+            "name": "josespinal/filament-record-navigation",
+            "version": "v2.0.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/josespinal/filament-record-navigation.git",
+                "reference": "6a6ef6ec2e66f9738ee5037d22192d58f38a7cb1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/josespinal/filament-record-navigation/zipball/6a6ef6ec2e66f9738ee5037d22192d58f38a7cb1",
+                "reference": "6a6ef6ec2e66f9738ee5037d22192d58f38a7cb1",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/contracts": "^10.0||^11.0",
+                "php": "^8.2",
+                "spatie/laravel-package-tools": "^1.16"
+            },
+            "require-dev": {
+                "larastan/larastan": "^2.9",
+                "laravel/pint": "^1.14",
+                "nunomaduro/collision": "^8.1.1||^7.10.0",
+                "orchestra/testbench": "^9.0.0||^8.22.0",
+                "pestphp/pest": "^2.34",
+                "pestphp/pest-plugin-arch": "^2.7",
+                "pestphp/pest-plugin-laravel": "^2.3"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "JoseEspinal\\RecordNavigation\\RecordNavigationServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "JoseEspinal\\RecordNavigation\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jose Espinal",
+                    "email": "jespinal@industria.com.do",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Record navigation from views",
+            "homepage": "https://github.com/josespinal/filament-record-navigation",
+            "keywords": [
+                "Jose Espinal",
+                "filament-record-navigation",
+                "laravel"
+            ],
+            "support": {
+                "issues": "https://github.com/josespinal/filament-record-navigation/issues",
+                "source": "https://github.com/josespinal/filament-record-navigation/tree/v2.0.4"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/Jose Espinal",
+                    "type": "github"
+                }
+            ],
+            "time": "2024-06-05T22:01:23+00:00"
         },
         {
             "name": "kirschbaum-development/eloquent-power-joins",
@@ -4094,88 +4095,6 @@
             "time": "2024-03-31T07:05:07+00:00"
         },
         {
-            "name": "mohamedsabil83/filament-hijri-picker",
-            "version": "v1.1.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/mohamedsabil83/filament-hijri-picker.git",
-                "reference": "910eb10e4ae7ae10a57d392523a2d7d3c1df15c0"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/mohamedsabil83/filament-hijri-picker/zipball/910eb10e4ae7ae10a57d392523a2d7d3c1df15c0",
-                "reference": "910eb10e4ae7ae10a57d392523a2d7d3c1df15c0",
-                "shasum": ""
-            },
-            "require": {
-                "filament/forms": "^3.0",
-                "illuminate/contracts": "^9.0|^10.0|^11.0",
-                "php": "^8.1",
-                "spatie/laravel-package-tools": "^1.14.0"
-            },
-            "require-dev": {
-                "larastan/larastan": "^2.2",
-                "laravel/pint": "^1.0",
-                "nunomaduro/collision": "^7.0|^8.0",
-                "orchestra/testbench": "8.0|^9.0",
-                "pestphp/pest": "^2.0",
-                "pestphp/pest-plugin-laravel": "^2.0",
-                "phpstan/extension-installer": "^1.1",
-                "phpstan/phpstan-deprecation-rules": "^1.0",
-                "phpstan/phpstan-phpunit": "^1.0",
-                "phpunit/phpunit": "^10.0|^11.0",
-                "spatie/laravel-ray": "^1.26"
-            },
-            "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "MohamedSabil83\\FilamentHijriPicker\\FilamentHijriPickerServiceProvider"
-                    ]
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "MohamedSabil83\\FilamentHijriPicker\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "MohamedSabil83",
-                    "email": "me@mohamedsabil83.com",
-                    "role": "Developer"
-                }
-            ],
-            "description": "A Hijri date time picker component for Filament",
-            "homepage": "https://github.com/mohamedsabil83/filament-hijri-picker",
-            "keywords": [
-                "filament",
-                "filament-hijri-picker",
-                "hijri",
-                "laravel",
-                "picker"
-            ],
-            "support": {
-                "issues": "https://github.com/mohamedsabil83/filament-hijri-picker/issues",
-                "source": "https://github.com/mohamedsabil83/filament-hijri-picker/tree/v1.1.0"
-            },
-            "funding": [
-                {
-                    "url": "https://paypal.me/technolizer",
-                    "type": "custom"
-                },
-                {
-                    "url": "https://github.com/mohamedsabil83",
-                    "type": "github"
-                }
-            ],
-            "time": "2024-03-12T21:48:58+00:00"
-        },
-        {
             "name": "monolog/monolog",
             "version": "3.6.0",
             "source": {
@@ -4587,6 +4506,86 @@
                 "source": "https://github.com/nikic/PHP-Parser/tree/v5.0.2"
             },
             "time": "2024-03-05T20:51:40+00:00"
+        },
+        {
+            "name": "njxqlus/filament-progressbar",
+            "version": "1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/njxqlus/filament-progressbar.git",
+                "reference": "8d7f955e69e44dbc3b05a089b9ad1073ba8e37ba"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/njxqlus/filament-progressbar/zipball/8d7f955e69e44dbc3b05a089b9ad1073ba8e37ba",
+                "reference": "8d7f955e69e44dbc3b05a089b9ad1073ba8e37ba",
+                "shasum": ""
+            },
+            "require": {
+                "filament/filament": "^3.0",
+                "illuminate/contracts": "^10.0|^11.0",
+                "php": "^8.1",
+                "spatie/laravel-package-tools": "^1.15.0"
+            },
+            "require-dev": {
+                "laravel/pint": "^1.0",
+                "nunomaduro/collision": "^7.9",
+                "nunomaduro/larastan": "^2.0.1",
+                "orchestra/testbench": "^8.0|^9.0",
+                "pestphp/pest": "^2.0",
+                "pestphp/pest-plugin-arch": "^2.0",
+                "pestphp/pest-plugin-laravel": "^2.0",
+                "phpstan/extension-installer": "^1.1",
+                "phpstan/phpstan-deprecation-rules": "^1.0",
+                "phpstan/phpstan-phpunit": "^1.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Njxqlus\\FilamentProgressbar\\FilamentProgressbarServiceProvider"
+                    ],
+                    "aliases": {
+                        "FilamentProgressbar": "Njxqlus\\FilamentProgressbar\\Facades\\FilamentProgressbar"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Njxqlus\\FilamentProgressbar\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Mikael Ahabalyants",
+                    "email": "njxqlus@gmail.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "This Filament component shows a progress bar at the top of the page when we navigate from one page to another",
+            "homepage": "https://github.com/njxqlus/filament-progressbar",
+            "keywords": [
+                "filament",
+                "laravel",
+                "njxqlus",
+                "pace-js",
+                "progressbar"
+            ],
+            "support": {
+                "issues": "https://github.com/njxqlus/filament-progressbar/issues",
+                "source": "https://github.com/njxqlus/filament-progressbar"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/njxqlus",
+                    "type": "github"
+                }
+            ],
+            "time": "2024-02-28T19:40:25+00:00"
         },
         {
             "name": "nunomaduro/termwind",
@@ -5440,86 +5439,6 @@
                 "source": "https://github.com/bobthecow/psysh/tree/v0.12.3"
             },
             "time": "2024-04-02T15:57:53+00:00"
-        },
-        {
-            "name": "quadrubo/filament-model-settings",
-            "version": "v1.3.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/Quadrubo/filament-model-settings.git",
-                "reference": "8c15b619e0367d6e7e2203f43e3d86fea8645b25"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/Quadrubo/filament-model-settings/zipball/8c15b619e0367d6e7e2203f43e3d86fea8645b25",
-                "reference": "8c15b619e0367d6e7e2203f43e3d86fea8645b25",
-                "shasum": ""
-            },
-            "require": {
-                "filament/filament": "^3.0",
-                "glorand/laravel-model-settings": "^6.0|^7.0",
-                "illuminate/contracts": "^10.0|^11.0",
-                "php": "^8.1",
-                "spatie/laravel-package-tools": "^1.15.0"
-            },
-            "require-dev": {
-                "laravel/pint": "^1.0",
-                "nunomaduro/collision": "^7.9|^8.0",
-                "nunomaduro/larastan": "^2.0.1",
-                "orchestra/testbench": "^8.0|^9.0",
-                "pestphp/pest": "^2.0",
-                "pestphp/pest-plugin-arch": "^2.0",
-                "pestphp/pest-plugin-laravel": "^2.0",
-                "phpstan/extension-installer": "^1.1",
-                "phpstan/phpstan-deprecation-rules": "^1.0",
-                "phpstan/phpstan-phpunit": "^1.0",
-                "phpunit/phpunit": "^10.0.17|^11.0"
-            },
-            "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "Quadrubo\\FilamentModelSettings\\FilamentModelSettingsServiceProvider"
-                    ],
-                    "aliases": {
-                        "FilamentModelSettings": "Quadrubo\\FilamentModelSettings\\Facades\\FilamentModelSettings"
-                    }
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Quadrubo\\FilamentModelSettings\\": "src/",
-                    "Quadrubo\\FilamentModelSettings\\Database\\Factories\\": "database/factories/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Quadrubo",
-                    "role": "Developer"
-                }
-            ],
-            "description": "This is my package filament-model-settings",
-            "homepage": "https://github.com/quadrubo/filament-model-settings",
-            "keywords": [
-                "Quadrubo",
-                "filament-model-settings",
-                "laravel"
-            ],
-            "support": {
-                "issues": "https://github.com/quadrubo/filament-model-settings/issues",
-                "source": "https://github.com/quadrubo/filament-model-settings"
-            },
-            "funding": [
-                {
-                    "url": "https://github.com/Quadrubo",
-                    "type": "github"
-                }
-            ],
-            "time": "2024-03-17T13:28:21+00:00"
         },
         {
             "name": "ralouphie/getallheaders",
@@ -8878,6 +8797,79 @@
                 "source": "https://github.com/webmozarts/assert/tree/1.11.0"
             },
             "time": "2022-06-03T18:03:27+00:00"
+        },
+        {
+            "name": "wiebenieuwenhuis/filament-code-editor",
+            "version": "1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sweebee/filament-code-editor.git",
+                "reference": "e52e44d2e3b18780d07e9cc4a327e4e282bf3573"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/sweebee/filament-code-editor/zipball/e52e44d2e3b18780d07e9cc4a327e4e282bf3573",
+                "reference": "e52e44d2e3b18780d07e9cc4a327e4e282bf3573",
+                "shasum": ""
+            },
+            "require": {
+                "filament/filament": "^3.0",
+                "illuminate/contracts": "^11.0",
+                "php": "^8.2",
+                "spatie/laravel-package-tools": "^1.9.2"
+            },
+            "require-dev": {
+                "nunomaduro/collision": "^8.1",
+                "nunomaduro/larastan": "^2.0.1",
+                "orchestra/testbench": "^8.0|^9.0",
+                "pestphp/pest": "^2.34",
+                "pestphp/pest-plugin-laravel": "^2.3",
+                "phpstan/extension-installer": "^1.1",
+                "phpstan/phpstan-deprecation-rules": "^1.0",
+                "phpstan/phpstan-phpunit": "^1.0",
+                "phpunit/phpunit": "^10.5",
+                "spatie/laravel-ray": "^1.26"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Wiebenieuwenhuis\\FilamentCodeEditor\\FilamentCodeEditorServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Wiebenieuwenhuis\\FilamentCodeEditor\\": "src",
+                    "Wiebenieuwenhuis\\FilamentCodeEditor\\Database\\Factories\\": "database/factories"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Sebastiaan Kloos",
+                    "email": "sebastiaankloos@pm.me",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Wiebe Nieuwenhuis",
+                    "email": "info@wiebenieuwenhuis.nl",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Code editor for Filament",
+            "homepage": "https://github.com/sweebee/filament-code-editor",
+            "keywords": [
+                "filament-code-editor",
+                "laravel"
+            ],
+            "support": {
+                "source": "https://github.com/sweebee/filament-code-editor/tree/1.1.0"
+            },
+            "time": "2024-04-12T15:58:18+00:00"
         }
     ],
     "packages-dev": [

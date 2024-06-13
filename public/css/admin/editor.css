@@ -39,6 +39,17 @@
     transition: box-shadow .1s linear;
 }
 
+.fi-fo-toggle {
+    background: #e1e1e15e !important;
+}
+
+.blockeditor {
+    margin-top: 2em;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid #e8e8e8;
+}
+
 .dark .block-editor {
     background: #161617;
 }
@@ -51,6 +62,42 @@
 .block-editor-container {
     border: 1px solid #7c7c7c1e !important;
 }
+
+.blockeditor:not(.dark) svg {
+    color: black !important;
+}
+
+.blockeditor:not(.dark) span,
+.blockeditor:not(.dark) p,
+.blockeditor:not(.dark) div {
+    color: black !important;
+}
+
+.editor-dark svg {
+    color: white !important;
+}
+
+.blockeditor .editor-dark span,
+.blockeditor .editor-dark p,
+.blockeditor .editor-dark div,
+.blockeditor .editor-dark svg {
+    color: white !important;
+}
+
+#enabled[aria-checked="true"]{
+    background: #fbbf24 !important;
+  }
+
+.editor-dark {
+    margin-top: 2em;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid #212123 !important;
+}
+
+.editor-dark .bg-white.text-gray-800.px-5.py-5.border-b.text-white.flex.justify-between.flex-initial {
+    border-bottom: 1px solid #39393b;
+  }
 
 .dark .components-panel__header {
     align-items: center;
@@ -65,6 +112,11 @@
     border-left: 1px solid #39393b;
     flex: 0 0 300px;
     overflow-y: auto;
+}
+
+.dark .bg-white {
+    background-color: #18181b;
+    color: white !important;
 }
 
 .dark .block-editor-container .block-editor__header {

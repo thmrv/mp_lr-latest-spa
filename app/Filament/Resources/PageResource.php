@@ -11,11 +11,13 @@ use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use PageEditor;
+use App\Traits\Meta\Metable;
 use SolutionForest\FilamentTranslateField\Forms\Component\Translate;
 
 class PageResource extends Resource
 {
     use SoftDeletes;
+    use Metable;
 
     protected static ?string $model = Page::class;
     protected static ?string $navigationIcon = 'heroicon-o-document-text';
@@ -75,11 +77,13 @@ class PageResource extends Resource
             Translate::make()
                 ->columnSpanFull()
                 ->columns(2)
-                ->schema([
-                    Forms\Components\TextInput::make('title')->required(),
-                    Forms\Components\TextInput::make('content'),
-                    Forms\Components\RichEditor::make('description')->columnSpanFull(),
-                ])
+                ->schema(
+                    array_merge(Metable::attachToPanel(), [
+                        Forms\Components\TextInput::make('title'),
+                        Forms\Components\Hidden::make('description'),
+                        Forms\Components\TextInput::make('name')->columnSpanFull(),
+                    ])
+                )
                 ->fieldTranslatableLabel(fn ($field, $locale) => __($field->getName(), locale: $locale)),
         ];
 
@@ -123,11 +127,11 @@ class PageResource extends Resource
                     ->toggleable(isToggledHiddenByDefault: true)
                     ->translateLabel(),
             ]);
-            /*->filters([
+        /*->filters([
                 Tables\Filters\TrashedFilter::make(),
                 // ...
             ])*/
-            /*->actions([
+        /*->actions([
                 Tables\Actions\DeleteAction::make(),
                 Tables\Actions\ForceDeleteAction::make(),
                 Tables\Actions\RestoreAction::make(),

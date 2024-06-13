@@ -25,9 +25,10 @@ return new class extends Migration
             $table->string('slug')->nullable();
             $table->string('title')->nullable();
             $table->string('pathname')->nullable();
-            $table->longText('content')->nullable();
-            $table->string('template_name');
-            $table->string('cover_image_url');
+            $table->longText('content_json')->nullable();
+            $table->longText('content_html')->nullable();
+            $table->string('template_name')->default('single');
+            $table->string('cover_image_url')->default('default_banner_slim.png');
             $table->timestamps();
             $table->softDeletes();
         });

@@ -43,7 +43,7 @@ return [
     */
 
     'blocks' => [
-        //Jeffreyvr\DropBlockEditor\Blocks\Example::class,
+        Jeffreyvr\DropBlockEditor\Blocks\Example::class,
         MastheadSection::class,
         Paragraph::class,
         WelcomeSection::class
@@ -61,7 +61,6 @@ return [
     */
 
     'buttons' => [
-        'block-editor-save-button',
     ],
 
     /*

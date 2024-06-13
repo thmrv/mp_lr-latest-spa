@@ -11,7 +11,7 @@ use Filament\Forms\Form;
 use Wiebenieuwenhuis\FilamentCodeEditor\Components\CodeEditor;
 use Illuminate\Support\Facades\Log;
 
-class Robots extends Page implements HasForms
+class Terminal extends Page implements HasForms
 {
     use InteractsWithForms;
 

@@ -22,32 +22,33 @@ use Filament\Support\Facades\FilamentAsset;
 use Filament\Support\Assets\Js;
 use Filament\Navigation\NavigationGroup;
 use Afsakar\FilamentOtpLogin\FilamentOtpLoginPlugin;
+use App\Filament\Auth\OTPLogin;
+use Njxqlus\FilamentProgressbar\FilamentProgressbarPlugin;
 use SolutionForest\FilamentTranslateField\FilamentTranslateFieldPlugin;
 
 class AdminPanelProvider extends PanelProvider
 {
 
-    public function boot(): void {
-
+    public function boot(): void
+    {
     }
 
     public function panel(Panel $panel): Panel
     {
-        FilamentAsset::register([
-            Css::make('laraberg_styles', './public/css/admin/editor.css'),
+        /*FilamentAsset::register([
+            Css::make('editorstyles', './public/css/admin/editor.css'),
         ]);
 
         FilamentAsset::register([
-            Js::make('laraberg_scripts', './public/js/admin/editor.js'),
-        ]);
+            Js::make('editorscripts', './public/js/admin/editor.js'),
+        ]);*/
 
         return $panel
             ->default()
             ->id('admin')
             ->path(env('ADM_PANEL_PATH'))
             ->brandName(env('ADM_PANEL_NAME'))
-            ->login()
-            ->breadcrumbs()
+            ->breadcrumbs(true)
             ->discoverResources(in: app_path('Filament/Resources'), for: 'App\\Filament\\Resources')
             ->discoverPages(in: app_path('Filament/Pages'), for: 'App\\Filament\\Pages')
             ->pages([
@@ -75,14 +76,14 @@ class AdminPanelProvider extends PanelProvider
             ->spa()
             ->navigationGroups([
                 NavigationGroup::make()
-                     ->label(ucfirst((string)__('filament/navigation/sidebar.all'))),
+                    ->label(ucfirst((string)__('filament/navigation/sidebar.all'))),
                 NavigationGroup::make()
-                     ->label(ucfirst((string)__('filament/navigation/sidebar.other')))
+                    ->label(ucfirst((string)__('filament/navigation/sidebar.other')))
             ])
             ->sidebarCollapsibleOnDesktop()
-            ->plugins([
-                FilamentOtpLoginPlugin::make(),
-                FilamentTranslateFieldPlugin::make()->defaultLocales(['en', 'ru', 'cn', 'kr'])
-            ]);
+            ->plugin(FilamentOtpLoginPlugin::make())
+            ->plugin(FilamentTranslateFieldPlugin::make()->defaultLocales(['en', 'ru', 'cn', 'kr']))
+            ->plugin(FilamentProgressbarPlugin::make()->color('#fbbf24'))
+            ->login(OTPLogin::class);
     }
 }

@@ -18,10 +18,12 @@
         "laravel/tinker": "^2.9",
         "livewire/livewire": "^3.4",
         "livewire/volt": "^1.0",
+        "njxqlus/filament-progressbar": "^1.0",
         "parallax/filament-comments": "^1.2",
         "solution-forest/filament-translate-field": "^1.2",
         "spatie/laravel-translatable": "^6.7",
-        "unisharp/laravel-filemanager": "*"
+        "unisharp/laravel-filemanager": "*",
+        "wiebenieuwenhuis/filament-code-editor": "^1.1"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.13",

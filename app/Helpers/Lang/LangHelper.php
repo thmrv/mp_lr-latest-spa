@@ -19,6 +19,9 @@ function getLocales()
     }
 }
 
+function getLocalesStatic() {
+    return ['ru', 'en', 'ko', 'zh'];
+}
 
 function randomSalad()
 {

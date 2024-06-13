@@ -28,8 +28,8 @@ return new class extends Migration
             $table->integer('discount')->default(0);
             $table->string('title')->nullable();
             $table->string('template_name')->default('solution');
-            $table->string('cover_image_url');
-            $table->string('custom_page_name');
+            $table->string('cover_image_url')->default('default_banner_slim.png');
+            $table->string('page_name')->nullable();;
             $table->softDeletes();
         });
 

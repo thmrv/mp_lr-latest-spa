@@ -6,15 +6,16 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use App\Traits\Meta\Metable;
+use Spatie\Translatable\HasTranslations;
 
 class Solution extends Model
 {
     use SoftDeletes;
     use HasFactory;
+    use Metable;
+    use HasTranslations;
 
-    protected $contentColumn = 'content';
-
-        /**
+    /**
      * The attributes that are mass assignable.
      *
      * @var array<int, string>
@@ -28,14 +29,15 @@ class Solution extends Model
         'content',
         'template_name',
         'cover_image_url',
-        'custom_page_name'
+        'page_name'
     ];
 
-    public static function booted()
+    public $translatable = ['title', 'description', 'content'];
+
+    public function __construct(array $attributes = array())
     {
-        static::creating(function ($model) {
-            Metable::attachToFillable();
-        });
+        parent::__construct($attributes);
+        $this->initializeMetable();
     }
 
     /**
@@ -43,8 +45,7 @@ class Solution extends Model
      *
      * @var array<int, string>
      */
-    protected $hidden = [
-    ];
+    protected $hidden = [];
 
     /**
      * Get the attributes that should be cast.
@@ -53,7 +54,6 @@ class Solution extends Model
      */
     protected function casts(): array
     {
-        return [
-        ];
+        return [];
     }
 }
